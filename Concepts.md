@@ -61,9 +61,9 @@
 		1. JavaScript Uses: Lexical Scope
 
 		2.  What is Lexical Scope?
-				=> Lexical scope (also called static scope) means that the scope of a variable is determined by its 					   location in the source code.
+				=> Lexical scope (also called static scope) means that the scope of a variable is determined by its location in the source code.
 
-					When a function is defined, it remembers the scope in which it was written, regardless of where 				   it's called later.
+					When a function is defined, it remembers the scope in which it was written, regardless of where it's called later.
 				   Example:
 					let name = "Global";
 
@@ -83,7 +83,7 @@
 
 
 			3. What is Dynamic Scope?
-				=> Dynamic scope means the scope of variables is determined by the call stack — where the function is 					   called, not where it was defined.
+				=> Dynamic scope means the scope of variables is determined by the call stack — where the function is called, not where it was defined.
 
 				⚠️ JavaScript does NOT support dynamic scoping.
 				Languages like Bash, Perl, or old Lisp support dynamic scoping.
@@ -101,7 +101,7 @@
 
 						outer
 
-					In dynamic scoping, inner() would look for name in the caller's scope (outer), not where it was 					defined.
+					In dynamic scoping, inner() would look for name in the caller's scope (outer), not where it was defined.
 
 
 			4. Mnemonic to Remember:

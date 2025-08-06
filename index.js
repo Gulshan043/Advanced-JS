@@ -59,31 +59,29 @@
 const outer = () => {
     const val = 'outer function variable';
 
-    const inner = () => {
+    return () => {
         const val2 = `I am inner function variable accessing my ${val}`;
         console.log(val);
         console.log(val2);
     };
-
-    return inner;
 };
 
 const closureFunc = outer();
 closureFunc();
 
 // in the above example :
-            // !) outer() is called.
+// !) outer() is called.
 
-            // 2) Inside outer(), a variable val is created.
+// 2) Inside outer(), a variable val is created.
 
-            // 3) A function inner() is defined, which references val.
+// 3) An inner is defined, which references val.
 
-            // 4) outer() returns inner, and now inner() is stored in closureFunc.
+// 4) outer() returns inner, and now inner() is stored in closureFunc.
 
-            // 5) Even though outer() is done executing, val is NOT destroyed.
+// 5) Even though outer() is done executing, val is NOT destroyed.
 
-            // 6) Why? Because inner() still closes over it (i.e., keeps a reference).
+// 6) Why? Because inner() still closes over it (i.e., keeps a reference).
 
-            // 7) So when you later call closureFunc(), it prints val successfully.
+// 7) So when you later call closureFunc(), it prints val successfully.
 
 //#endregion Closuers

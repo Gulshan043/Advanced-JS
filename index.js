@@ -57,13 +57,33 @@
 
 //#region Closures In JS
 const outer = () => {
-    const val = 'outer fucntion variable'
-    const inner = () => {
-        const val2 = `I am inner funtion variable accessing my ${val}`
-        console.log(val)
-        console.log(val2)
-    }
-    inner()
-}
+    const val = 'outer function variable';
 
-outer()
+    const inner = () => {
+        const val2 = `I am inner function variable accessing my ${val}`;
+        console.log(val);
+        console.log(val2);
+    };
+
+    return inner;
+};
+
+const closureFunc = outer();
+closureFunc();
+
+// in the above example :
+            // !) outer() is called.
+
+            // 2) Inside outer(), a variable val is created.
+
+            // 3) A function inner() is defined, which references val.
+
+            // 4) outer() returns inner, and now inner() is stored in closureFunc.
+
+            // 5) Even though outer() is done executing, val is NOT destroyed.
+
+            // 6) Why? Because inner() still closes over it (i.e., keeps a reference).
+
+            // 7) So when you later call closureFunc(), it prints val successfully.
+
+//#endregion Closuers

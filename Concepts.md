@@ -109,4 +109,6 @@
 
 				- Dynamic = Direction of call
 
-
+* Closures
+		1. What is closures?
+				=> Closure is a funtion that remebers and can access varibles from it's outer function even after outer funtion exection

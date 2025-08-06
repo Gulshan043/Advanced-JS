@@ -42,15 +42,28 @@
 //#endregion Execution Context
 
 //#region Lexical Scope In Js
-const val = 'outside of lexical'
-console.log(val)
-function lexical() {
-    const val = 'inside lexical function'
-    function innerLexical() {
+// const val = 'outside of lexical'
+// console.log(val)
+// function lexical() {
+//     const val = 'inside lexical function'
+//     function innerLexical() {
+//         console.log(val)
+//     }
+//     innerLexical()
+// }
+
+// lexical()
+// as we know JavaScript uses lexical scoping so we cannot write dynamic scoping example in JS
+
+//#region Closures In JS
+const outer = () => {
+    const val = 'outer fucntion variable'
+    const inner = () => {
+        const val2 = `I am inner funtion variable accessing my ${val}`
         console.log(val)
+        console.log(val2)
     }
-    innerLexical()
+    inner()
 }
 
-lexical()
-// as we know JavaScript uses lexical scoping so we cannot write dynamic scoping example in JS
+outer()
